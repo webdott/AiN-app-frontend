@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+/* 
+================== General Styles ===================
+*/
+:root {
+	--AIESEC-Black: #52565e;
+	--AIESEC-Blue: #037ef3;
+	--AIESEC-Blue-rgb: 3, 126, 243;
+	--light-gray: #f3f4f7;
+	--white: #ffffff;
+	--outline: #caccd1;
+	font-size: 16px;
+}
+
+body,
+html {
+	width: 100vw;
+	overflow-x: hidden;
+	max-width: 1920px;
+	min-height: 100vh;
+	margin: 0 auto;
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+	font-family: "Lato", sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+input {
+	transition: 0.5s;
+	
+	&[type="text"]:hover {
+		box-shadow: 0px 0px 10px rgba(var(--AIESEC-Blue-rgb), 0.38);
+	}
+
+	&:focus {
+		outline-width: 0px;
+		border: 1px solid var(--AIESEC-Blue) !important;
+		box-shadow: 0px 0px 10px rgba(var(--AIESEC-Blue-rgb), 0.38);
+	}
+}
+
+button {
+	transition: 0.5s;
+	cursor: pointer;
+
+	&[type="text"]:hover {
+		box-shadow: 0px 0px 10px rgba(var(--AIESEC-Blue-rgb), 0.38);
+	}
+
+	&:focus {
+		border: none;
+		outline: none;
+		border: 1px solid var(--AIESEC-Blue);
+		box-shadow: 0 0 5pt 2pt rgba(var(--AIESEC-Blue-rgb), 0.38);
+		outline-width: 0px;
+	}
+}
+/* 
+================== General Styles End===================
+*/
