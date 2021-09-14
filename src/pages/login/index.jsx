@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
 import ArrowDown from "../../assets/svg/ArrowDown";
 
@@ -85,13 +86,13 @@ const Login = () => {
 								}
 								onClick={() => setPasswordType("text")}
 							>
-								<i className="fas fa__eye__slash"></i>
+								<AiFillEyeInvisible />
 							</span>
 							<span
 								className={passwordType === "text" ? "eye" : "eye none"}
 								onClick={() => setPasswordType("password")}
 							>
-								<i className="far fa__eye"></i>
+								<AiFillEye />
 							</span>
 						</div>
 					</div>
