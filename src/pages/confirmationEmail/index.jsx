@@ -23,6 +23,7 @@ const ConfirmationEmail = () => {
 						<button>Send mail again</button>
 					</p>
 				</div>
+                <p className="copyright__text">© Copyright AiN 2021.</p>
 			</div>
 		</section>
 	);

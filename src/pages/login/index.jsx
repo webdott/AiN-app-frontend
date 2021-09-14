@@ -107,6 +107,8 @@ const Login = () => {
 							<Link to="/reset">Reset password</Link>
 						</p>
 					</div>
+
+                    <p className="copyright__text__mobile">© Copyright AiN 2021.</p>
 				</form>
 
 				<p className="copyright__text">© Copyright AiN 2021.</p>

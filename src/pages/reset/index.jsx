@@ -66,6 +66,8 @@ const Reset = () => {
 							<Link to="/signin">Log in</Link>
 						</p>
 					</div>
+
+                    <p className="copyright__text__mobile">© Copyright AiN 2021.</p>
 				</form>
 
 				<p className="copyright__text">© Copyright AiN 2021.</p>

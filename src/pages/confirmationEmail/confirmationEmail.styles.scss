@@ -45,6 +45,11 @@
 			line-height: 19px;
 			color: var(--white);
 			margin-top: 5rem;
+            display: none;
+
+            @media screen and (max-width: 480px) {
+                display: block;
+            }
 		}
 
 		.reset__submit__button {
