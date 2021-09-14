@@ -45,11 +45,11 @@
 			line-height: 19px;
 			color: var(--white);
 			margin-top: 5rem;
-            display: none;
+			display: none;
 
-            @media screen and (max-width: 480px) {
-                display: block;
-            }
+			@media screen and (max-width: 540px) {
+				display: block;
+			}
 		}
 
 		.reset__submit__button {
@@ -83,9 +83,9 @@
 					opacity: 0.8;
 				}
 
-                &:first-child{
-                    margin-bottom: .3rem;
-                }
+				&:first-child {
+					margin-bottom: 0.3rem;
+				}
 
 				button {
 					border: none;

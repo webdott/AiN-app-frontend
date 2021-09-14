@@ -14,10 +14,10 @@
 		align-items: center;
 		color: var(--white);
 
-        @media screen and (max-width: 480px) {
+		@media screen and (max-width: 540px) {
 			padding: 5rem 0 0 0;
-			max-width: 480px;
-            align-items: flex-start;
+			max-width: 540px;
+			align-items: flex-start;
 		}
 
 		.reset__title,
@@ -25,11 +25,11 @@
 			text-align: center;
 			width: 250px;
 
-            @media screen and (max-width: 480px) {
-                text-align: left;
-                padding-left: 1rem;
-                width: 270px;
-            }
+			@media screen and (max-width: 540px) {
+				text-align: left;
+				padding-left: 1rem;
+				width: 270px;
+			}
 		}
 
 		.reset__title {
@@ -42,18 +42,18 @@
 			font-weight: 300;
 			font-size: 1rem;
 			line-height: 21px;
-            opacity: .8;
+			opacity: 0.8;
 		}
 
 		.arrow__down {
 			margin: 1.5rem 0;
 			padding-right: 1rem;
 
-            @media screen and (max-width: 480px) {
-                margin-top: -1rem;
-                padding-right: 3rem;
-                align-self: flex-end;
-            }
+			@media screen and (max-width: 540px) {
+				margin-top: -1rem;
+				padding-right: 3rem;
+				align-self: flex-end;
+			}
 		}
 
 		.reset__form {
@@ -62,7 +62,7 @@
 			background: var(--white);
 			border-radius: 15px;
 
-            @media screen and (max-width: 480px) {
+			@media screen and (max-width: 540px) {
 				border-radius: 20px 20px 0px 0px;
 				padding: 2.5rem 1rem;
 			}
@@ -91,7 +91,7 @@
 					border-radius: 5px;
 					color: var(--AIESEC-Black);
 					font-weight: 600;
-					font-size: .875rem;
+					font-size: 0.875rem;
 					padding: 1rem;
 					display: block;
 
@@ -154,22 +154,22 @@
 			color: var(--white);
 			margin-top: 5rem;
 
-            &__mobile {
-                width: 100%;
-                text-align: center;
+			&__mobile {
+				width: 100%;
+				text-align: center;
 				font-weight: 300;
-				font-size: .875rem;
-                color: var(--AIESEC-Black);
-                margin-top: 5rem;
-                display: none;
+				font-size: 0.875rem;
+				color: var(--AIESEC-Black);
+				margin-top: 5rem;
+				display: none;
 			}
 
-			@media screen and (max-width: 480px) {
+			@media screen and (max-width: 540px) {
 				display: none;
-                
-                &__mobile{
-                    display: block;
-                }
+
+				&__mobile {
+					display: block;
+				}
 			}
 		}
 	}
