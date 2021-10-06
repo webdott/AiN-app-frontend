@@ -11,6 +11,11 @@ import './login.styles.scss';
     This is the login page. UI and functionalities would be added here
 */
 
+enum focusType {
+	Add = 'ADD',
+	Remove = 'REMOVE',
+}
+
 type FormValues = {
 	email: string;
 	password: string;
@@ -20,11 +25,21 @@ const Login = (): JSX.Element => {
 	/* Component state */
 	const [passwordType, setPasswordType] = useState<string>('password');
 	const [buttonActive, setButtonActive] = useState<boolean>(false);
-	const passwordDiv = useRef<HTMLDivElement>();
+	const passwordDiv = useRef<HTMLDivElement>(null);
 	const { register, watch } = useForm<FormValues>();
 
 	// watch for when the email and password values change
 	const watchFields: string[] = watch(['email', 'password']);
+
+	const focusHandler = (type: focusType) => {
+		if (type === focusType.Add) {
+			passwordDiv.current!.classList.add('focus');
+		} else if (type === focusType.Remove) {
+			passwordDiv.current!.classList.remove('focus');
+		} else {
+			return;
+		}
+	};
 
 	useEffect(() => {
 		// disable or enable submit button based on email and password value length
@@ -69,19 +84,17 @@ const Login = (): JSX.Element => {
 							<input
 								type={passwordType}
 								placeholder='enter password'
-								onFocus={() => passwordDiv.current.classList.add('focus')}
-								onBlur={() => {
-									passwordDiv.current.classList.remove('focus');
-								}}
 								{...register('password', {
 									required: true,
 									pattern: {
 										value:
-											/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+										/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
 										message:
-											'Password should be at least 8 characters, 1 uppercase letter, 1 lowercase leter, 1 number & 1 Symbol',
+										'Password should be at least 8 characters, 1 uppercase letter, 1 lowercase leter, 1 number & 1 Symbol',
 									},
 								})}
+								onFocus={() => focusHandler(focusType.Add)}
+								onBlur={() => focusHandler(focusType.Remove)}
 								required
 							/>
 							<span
