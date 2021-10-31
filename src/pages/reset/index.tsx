@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
@@ -14,7 +14,7 @@ type FormValues = {
 	email: string;
 };
 
-const Reset = (): JSX.Element => {
+const Reset: FC = () => {
 	/* Component state */
 	const [buttonActive, setButtonActive] = useState<boolean>(false);
 	const { register, watch } = useForm<FormValues>();

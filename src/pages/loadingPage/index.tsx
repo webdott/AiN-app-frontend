@@ -1,8 +1,7 @@
-import React from 'react';
-
+import { FC } from 'react';
 import './loadingPage.styles.scss';
 
-const LoadingPage = (): JSX.Element => {
+const LoadingPage: FC = () => {
 	return (
 		<section id='loading__page'>
 			<div className='lds-ring'>

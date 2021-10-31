@@ -1,0 +1,189 @@
+#sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 244px;
+	height: 100vh;
+	background: var(--white);
+	box-shadow: 0px 0px 10px rgba(202, 202, 202, 0.15);
+	transition: width 0.4s ease-in-out;
+
+	& + #dashboard__main__content,
+	& + #notifications__main__content,
+	& + #customers__main__content,
+	& + #profile__main__content {
+		margin: 0 0 0 244px;
+	}
+
+	.sidebar__profile {
+		width: 100%;
+		margin: 4rem 0;
+		padding: 0 2rem;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		transition: justify-content 0.4s ease-in-out;
+
+		&__image {
+			min-width: 36px;
+			min-height: 36px;
+			max-width: 36px;
+			max-height: 36px;
+			border-radius: 50%;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&__details {
+			margin-left: 1.125rem;
+
+			&__name {
+				font-weight: 900;
+				font-size: 20px;
+				line-height: 137.15%;
+				color: var(--AIESEC-Black);
+			}
+
+			&__email {
+				margin-top: 0.2rem;
+				font-size: 12px;
+				line-height: 14px;
+				color: var(--AIESEC-Blue);
+			}
+		}
+
+		p {
+			// opacity: 0;
+			// visibility: hidden;
+			white-space: nowrap;
+			overflow: hidden;
+			transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+		}
+	}
+
+	.sidebar__navbar {
+		width: 100%;
+
+		ul {
+			width: 100%;
+
+			li {
+				margin: 1rem 0;
+
+				button {
+					width: 100%;
+					padding: 1rem 2rem;
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					border: none;
+					background: none;
+					font-size: 1.125rem;
+					transition: justify-content 0.4s ease-in-out;
+
+					&.active {
+						background: var(--AIESEC-Blue);
+
+						p,
+						svg {
+							color: var(--white);
+						}
+					}
+
+					&:hover {
+						border: none;
+						outline: none;
+						border: 1px solid var(--AIESEC-Blue);
+						box-shadow: 0 0 5pt 2pt rgba(var(--AIESEC-Blue-rgb), 0.38);
+						outline-width: 0px;
+					}
+
+					p {
+						color: var(--sub-text);
+						// opacity: 0;
+						// visibility: hidden;
+						white-space: nowrap;
+						overflow: hidden;
+						transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+						margin-left: 1.125rem;
+					}
+
+					svg {
+						color: var(--AIESEC-Black);
+						min-width: 18px;
+						min-height: 18px;
+					}
+				}
+			}
+		}
+	}
+
+	// &:hover {
+	// 	width: 244px;
+
+	// 	& + #dashboard__main__content {
+	// 		margin: 0 0 0 244px;
+	// 	}
+
+	// 	.sidebar__profile {
+	// 		p {
+	// 			opacity: 1;
+	// 			visibility: visible;
+	// 		}
+	// 	}
+
+	// 	.sidebar__navbar {
+	// 		ul {
+	// 			li {
+	// 				button {
+	// 					justify-content: flex-start;
+
+	// 					p {
+	// 						opacity: 1;
+	// 						visibility: visible;
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	@media screen and (max-width: 600px) {
+		left: -100vw;
+		transition: left 0.4s ease-in-out;
+
+		& + #dashboard__main__content,
+		& + #notifications__main__content,
+		& + #customers__main__content,
+		& + #profile__main__content {
+			margin: 0;
+		}
+
+		&.expand {
+			left: 0;
+
+			& + #dashboard__main__content header,
+			& + #notifications__main__content header,
+			& + #customers__main__content header,
+			& + #profile__main__content header {
+				margin: 0 0 0 244px;
+			}
+		}
+
+		&:hover {
+			width: 244px;
+
+			& + #dashboard__main__content,
+			& + #notifications__main__content,
+			& + #customers__main__content,
+			& + #profile__main__content {
+				margin: 0;
+			}
+		}
+	}
+}

@@ -1,10 +1,9 @@
-import React from 'react';
-
+import { FC } from 'react';
 import MailIcon from '../../assets/svg/MailIcon';
 
 import './confirmationEmail.styles.scss';
 
-const ConfirmationEmail = (): JSX.Element => {
+const ConfirmationEmail: FC = () => {
 	return (
 		<section id='confirmation__email'>
 			<div className='confirmation__email__container'>
