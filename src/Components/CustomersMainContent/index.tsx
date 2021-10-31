@@ -33,9 +33,7 @@ const CustomersMainContent: FC<CustomersMainContentProps> = ({
 						</div>
 					</button>
 
-					<button className={isSidebarExpanded ? 'closed__button' : ''}>
-						+ Upload CSV/XLS
-					</button>
+					<p>Customers</p>
 				</header>
 
 				<main className='main'></main>

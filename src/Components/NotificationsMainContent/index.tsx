@@ -35,9 +35,7 @@ const NotificationsMainContent: FC<NotificationsMainContentProps> = ({
 						</div>
 					</button>
 
-					<button className={isSidebarExpanded ? 'closed__button' : ''}>
-						+ Upload CSV/XLS
-					</button>
+					<p>Notifications</p>
 				</header>
 
 				<main className='main'>

@@ -33,9 +33,7 @@ const DashboardMainContent: FC<DashboardMainContentProps> = ({
 						</div>
 					</button>
 
-					<button className={isSidebarExpanded ? 'closed__button' : ''}>
-						+ Upload CSV/XLS
-					</button>
+					<p>Dashboard</p>
 				</header>
 
 				<main className='main'></main>
