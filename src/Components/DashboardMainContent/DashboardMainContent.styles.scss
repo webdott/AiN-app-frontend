@@ -3,6 +3,10 @@
 	position: relative;
 
 	.header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: var(--white);
 		width: 100%;
 		height: 70px;
 		padding: 1rem;
@@ -128,6 +132,7 @@
 
 	.main {
 		min-height: 85vh;
+		margin-top: 90px;
 	}
 
 	.footer {
@@ -135,5 +140,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-bottom: 1rem;
 	}
 }
