@@ -1,5 +1,7 @@
 import { Dispatch, FC, SetStateAction, useState } from 'react';
 
+import Header from '../Header';
+import Footer from '../Footer';
 import FeedbackText from '../FeedbackText';
 import Notification from './Notification';
 import notificationData from '../../data/notificationData';
@@ -21,27 +23,16 @@ const NotificationsMainContent: FC<NotificationsMainContentProps> = ({
 			{message && <FeedbackText message={message} />}
 
 			<section id='notifications__main__content'>
-				<header className='header'>
-					<button
-						className='hamburger'
-						onClick={() =>
-							setIsSidebarExpanded((isSidebarExpanded) => !isSidebarExpanded)
-						}
-					>
-						<div id='nav-icon1' className={isSidebarExpanded ? 'open' : ''}>
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</button>
-
-					<p>Notifications</p>
-				</header>
+				<Header
+					isSidebarExpanded={isSidebarExpanded}
+					setIsSidebarExpanded={setIsSidebarExpanded}
+					page='Notifications'
+				/>
 
 				<main className='main'>
-					<div className="notifications">
-						{notificationData.map(notification => (
-							<Notification 
+					<div className='notifications'>
+						{notificationData.map((notification) => (
+							<Notification
 								key={notification.id}
 								name={notification.name}
 								title={notification.title}
@@ -51,11 +42,7 @@ const NotificationsMainContent: FC<NotificationsMainContentProps> = ({
 					</div>
 				</main>
 
-				<footer className='footer'>
-					<div className='AIESEC__logo' title='AIESEC in Nigeria'>
-						<img src='/images/AIESECLOGO.png' alt="AIESEC in Nigeria's logo" />
-					</div>
-				</footer>
+				<Footer />
 			</section>
 		</>
 	);

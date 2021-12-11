@@ -1,6 +1,11 @@
 import { Dispatch, FC, SetStateAction, useState } from 'react';
 
+import Footer from '../Footer';
+import Header from '../Header';
 import FeedbackText from '../FeedbackText';
+import SearchFilter from '../SearchFilter';
+import Customer from './Customer';
+import customerList from '../../data/customerListData';
 import './CustomersMainContent.styles.scss';
 
 type CustomersMainContentProps = {
@@ -19,30 +24,26 @@ const CustomersMainContent: FC<CustomersMainContentProps> = ({
 			{message && <FeedbackText message={message} />}
 
 			<section id='customers__main__content'>
-				<header className='header'>
-					<button
-						className='hamburger'
-						onClick={() =>
-							setIsSidebarExpanded((isSidebarExpanded) => !isSidebarExpanded)
-						}
-					>
-						<div id='nav-icon1' className={isSidebarExpanded ? 'open' : ''}>
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</button>
+				<Header
+					isSidebarExpanded={isSidebarExpanded}
+					setIsSidebarExpanded={setIsSidebarExpanded}
+					page='Customers'
+				/>
 
-					<p>Customers</p>
-				</header>
+				<main className='main'>
+					<SearchFilter />
 
-				<main className='main'></main>
-
-				<footer className='footer'>
-					<div className='AIESEC__logo' title='AIESEC in Nigeria'>
-						<img src='/images/AIESECLOGO.png' alt="AIESEC in Nigeria's logo" />
+					<div className='customer__list'>
+						{customerList.map(customer => (
+							<Customer 
+								key={customer.customerId}
+								customer={customer}
+							/>
+						))}
 					</div>
-				</footer>
+				</main>
+
+				<Footer />
 			</section>
 		</>
 	);

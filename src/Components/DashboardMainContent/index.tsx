@@ -1,5 +1,7 @@
 import { Dispatch, FC, SetStateAction, useState } from 'react';
 
+import Header from '../Header';
+import Footer from '../Footer';
 import FeedbackText from '../FeedbackText';
 import './DashboardMainContent.styles.scss';
 
@@ -19,30 +21,15 @@ const DashboardMainContent: FC<DashboardMainContentProps> = ({
 			{message && <FeedbackText message={message} />}
 
 			<section id='dashboard__main__content'>
-				<header className='header'>
-					<button
-						className='hamburger'
-						onClick={() =>
-							setIsSidebarExpanded((isSidebarExpanded) => !isSidebarExpanded)
-						}
-					>
-						<div id='nav-icon1' className={isSidebarExpanded ? 'open' : ''}>
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</button>
-
-					<p>Dashboard</p>
-				</header>
+				<Header
+					isSidebarExpanded={isSidebarExpanded}
+					setIsSidebarExpanded={setIsSidebarExpanded}
+					page='Dashboard'
+				/>
 
 				<main className='main'></main>
 
-				<footer className='footer'>
-					<div className='AIESEC__logo' title='AIESEC in Nigeria'>
-						<img src='/images/AIESECLOGO.png' alt="AIESEC in Nigeria's logo" />
-					</div>
-				</footer>
+				<Footer />
 			</section>
 		</>
 	);

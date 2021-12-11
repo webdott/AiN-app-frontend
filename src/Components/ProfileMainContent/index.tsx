@@ -1,6 +1,11 @@
 import { Dispatch, FC, SetStateAction, useState } from 'react';
 
+import Footer from '../Footer';
+import Header from '../Header';
 import FeedbackText from '../FeedbackText';
+import AiesecMan from '../../assets/svg/AiesecMan';
+import useCalendar from '../../hooks/useCalendar';
+import Calendar from '../Calendar';
 import './ProfileMainContent.styles.scss';
 
 type ProfileMainContentProps = {
@@ -13,36 +18,74 @@ const ProfileMainContent: FC<ProfileMainContentProps> = ({
 	setIsSidebarExpanded,
 }) => {
 	const [message, setMessage] = useState<string>('');
+	const { startDate } = useCalendar();
 
 	return (
 		<>
 			{message && <FeedbackText message={message} />}
 
 			<section id='profile__main__content'>
-				<header className='header'>
-					<button
-						className='hamburger'
-						onClick={() =>
-							setIsSidebarExpanded((isSidebarExpanded) => !isSidebarExpanded)
-						}
-					>
-						<div id='nav-icon1' className={isSidebarExpanded ? 'open' : ''}>
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</button>
+				<Header
+					isSidebarExpanded={isSidebarExpanded}
+					setIsSidebarExpanded={setIsSidebarExpanded}
+					page='Profile'
+				/>
 
-					<p>Profile</p>
-				</header>
-
-				<main className='main'></main>
-
-				<footer className='footer'>
-					<div className='AIESEC__logo' title='AIESEC in Nigeria'>
-						<img src='/images/AIESECLOGO.png' alt="AIESEC in Nigeria's logo" />
+				<main className='main'>
+					<div className='profile__image'>
+						<img src='/images/Avatar1-big.png' alt="Idowu's avatar" />
 					</div>
-				</footer>
+					<p className='profile__name'>Idowu Fakomi</p>
+
+					<div className='profile__details'>
+						<p className='title'>Personal Details</p>
+						<div className='content'>
+							<div>
+								<p>Email</p>
+								<p className='email' title='idowu.fakomi@aiesec.net'>
+									idowu.fakomi@aiesec.net
+								</p>
+							</div>
+							<div>
+								<p>Local Committee</p>
+								<p>Nigeria</p>
+							</div>
+							<div>
+								<p>EXPA ID</p>
+								<p>123456</p>
+							</div>
+						</div>
+					</div>
+
+					<div className='profile__active__roles'>
+						<p className='title'>Active Roles</p>
+						<div className='content'>
+							<div className='role__body'>
+								<div>
+									<AiesecMan />
+									<p>Team member</p>
+								</div>
+								<p className='team'>Membership Experience</p>
+							</div>
+							<div className='role__body'>
+								<div>
+									<AiesecMan />
+									<p>Customer support</p>
+								</div>
+								<p className='team'>B2C, AiN</p>
+							</div>
+						</div>
+					</div>
+
+					<div className='last__active'>
+						<p>last active</p>
+						<p>12th October, 2021</p>
+					</div>
+
+					<Calendar />
+				</main>
+
+				<Footer />
 			</section>
 		</>
 	);
