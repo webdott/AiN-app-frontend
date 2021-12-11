@@ -12,7 +12,8 @@
 	& + #dashboard__main__content,
 	& + #notifications__main__content,
 	& + #customers__main__content,
-	& + #profile__main__content {
+	& + #profile__main__content,
+	& + #customer__profile__main__content {
 		padding: 0 0 0 244px;
 	}
 
@@ -160,7 +161,8 @@
 		& + #dashboard__main__content,
 		& + #notifications__main__content,
 		& + #customers__main__content,
-		& + #profile__main__content {
+		& + #profile__main__content,
+		& + #customer__profile__main__content {
 			padding: 0;
 		}
 
@@ -170,7 +172,8 @@
 			& + #dashboard__main__content header,
 			& + #notifications__main__content header,
 			& + #customers__main__content header,
-			& + #profile__main__content header {
+			& + #profile__main__content,
+			& + #customer__profile__main__content header {
 				padding: 0 0 0 244px;
 			}
 		}
@@ -181,7 +184,8 @@
 			& + #dashboard__main__content,
 			& + #notifications__main__content,
 			& + #customers__main__content,
-			& + #profile__main__content {
+			& + #profile__main__content,
+			& + #customer__profile__main__content {
 				padding: 0;
 			}
 		}

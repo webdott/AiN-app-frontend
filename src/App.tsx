@@ -9,6 +9,7 @@ const ConfirmationEmail = lazy<FC>(() => import('./pages/confirmationEmail'));
 const DashboardPage = lazy<FC>(() => import('./pages/dashboardPage'));
 const NotificationsPage = lazy<FC>(() => import('./pages/notificationsPage'));
 const CustomersPage = lazy<FC>(() => import('./pages/customersPage'));
+const CustomerProfilePage = lazy<FC>(() => import('./pages/customerProfilePage'));
 const ProfilePage = lazy<FC>(() => import('./pages/profilePage'));
 
 const App = () => (
@@ -22,6 +23,7 @@ const App = () => (
 					<Route exact path='/confirmation' component={ConfirmationEmail} />
 					<Route exact path='/notifications' component={NotificationsPage} />
 					<Route exact path='/customers' component={CustomersPage} />
+					<Route exact path='/customer/:id' component={CustomerProfilePage} />
 					<Route exact path='/profile' component={ProfilePage} />
 					<Route component={Login} />
 				</Switch>
