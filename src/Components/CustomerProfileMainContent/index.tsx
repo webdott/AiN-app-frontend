@@ -2,6 +2,7 @@ import { Dispatch, FC, SetStateAction, useState } from 'react';
 
 import Footer from '../Footer';
 import Header from '../Header';
+import NoContactModal from '../NoContactModal';
 import FeedbackText from '../FeedbackText';
 import GTa from '../../assets/svg/GTa';
 import GV from '../../assets/svg/GV';
@@ -17,10 +18,13 @@ const CustomerProfileMainContent: FC<CustomerProfileMainContentProps> = ({
 	setIsSidebarExpanded,
 }) => {
 	const [message, setMessage] = useState<string>('');
+	const [noContact, setNoContact] = useState<boolean>(false);
 
 	return (
 		<>
 			{message && <FeedbackText message={message} />}
+
+			{noContact && <NoContactModal setNoContact={setNoContact}/>}
 
 			<section id='customer__profile__main__content'>
 				<Header
@@ -36,10 +40,20 @@ const CustomerProfileMainContent: FC<CustomerProfileMainContentProps> = ({
 						</div>
 						<p className='profile__name'>Idowu Fakomi</p>
 
-						<button className='contact__customer'>CONTACT CUSTOMER</button>
+						<button
+							className='contact__customer'
+							onClick={() => setNoContact(true)}
+						>
+							CONTACT CUSTOMER
+						</button>
 
 						<div className='managers'>
 							<p>Managers:</p>
+							<div className='managers__images'>
+								<img src='/images/Avatar1-big.png' alt='manager1' />
+								<img src='/images/Avatar1-big.png' alt='manager2' />
+								<img src='/images/Avatar1-big.png' alt='manager3' />
+							</div>
 						</div>
 
 						<div className='more__details'>
@@ -100,50 +114,63 @@ const CustomerProfileMainContent: FC<CustomerProfileMainContentProps> = ({
 						</div>
 					</div>
 
-					<div className='opportunities__applied'>
-						<div className='title'>
-							<p>Opportunities</p>
-						</div>
-
-						<div className='opportunities'>
-							<div className='opportunity'>
-								<div className='opportunity__header'>
-									<div>
-										<div className='icon'>
-											<GTa />
-										</div>
-										<p className='opportunity__title'>English Teacher</p>
-										<p className='opportunity__location'>Benin</p>
-									</div>
-									<div>
-										<div className='status'>Applied</div>
-									</div>
-								</div>
-
-								<p className='opportunity__details'>
-									Peak Memorial Benin. Lorem ipsum dolor sit amet, consectetur
-									adipiscing
-								</p>
+					<div className='opportunities__active__status'>
+						<div className='opportunities__applied'>
+							<div className='title'>
+								<p>Opportunities</p>
 							</div>
 
-							<div className='opportunity'>
-								<div className='opportunity__header'>
-									<div>
-										<div className='icon'>
-											<GV />
+							<div className='opportunities'>
+								<div className='opportunity'>
+									<div className='opportunity__header'>
+										<div>
+											<div className='icon'>
+												<GTa />
+											</div>
+											<p className='opportunity__title'>English Teacher</p>
+											<p className='opportunity__location'>Benin</p>
 										</div>
-										<p className='opportunity__title'>English Teacher</p>
-										<p className='opportunity__location'>Benin</p>
+										<div>
+											<div className='status'>Applied</div>
+										</div>
 									</div>
-									<div>
-										<div className='status'>Completed</div>
-									</div>
+
+									<p className='opportunity__details'>
+										Peak Memorial Benin. Lorem ipsum dolor sit amet, consectetur
+										adipiscing
+									</p>
 								</div>
 
-								<p className='opportunity__details'>
-									Peak Memorial Benin. Lorem ipsum dolor sit amet, consectetur
-									adipiscing
-								</p>
+								<div className='opportunity'>
+									<div className='opportunity__header'>
+										<div>
+											<div className='icon'>
+												<GV />
+											</div>
+											<p className='opportunity__title'>English Teacher</p>
+											<p className='opportunity__location'>Benin</p>
+										</div>
+										<div>
+											<div className='status'>Completed</div>
+										</div>
+									</div>
+
+									<p className='opportunity__details'>
+										Peak Memorial Benin. Lorem ipsum dolor sit amet, consectetur
+										adipiscing
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div className='signed__last__active'>
+							<div className='signed'>
+								<p>Signed up on</p>
+								<p>12th October, 2021</p>
+							</div>
+							<div className='last__active'>
+								<p>last active</p>
+								<p>3rd December, 2021</p>
 							</div>
 						</div>
 					</div>
