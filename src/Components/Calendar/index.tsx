@@ -38,6 +38,8 @@ const Calendar = () => {
 								day__number 
 								${dayNumber > 1 && dayNumber < 21 ? 'in__range' : ''}
 								${dayNumber === 1 || dayNumber === 21 ? 'selected' : ''}
+								${dayNumber === 1 ? 'first' : ''}
+								${dayNumber === 21 ? 'last' : ''}
 								`
 							}>
 								{dayNumber}

@@ -12,7 +12,8 @@
 
 	.calendar {
 		width: 100%;
-		max-width: 328px;
+		min-width: 320px;
+		max-width: 350px;
 		border-radius: 10px;
 		box-shadow: 0px 0px 10px rgba(202, 202, 202, 0.15);
 		background: var(--white);
@@ -123,13 +124,43 @@
 					align-items: center;
 
 					&.in__range {
-						background: #E4F1FF;
+						width: 50px;
+						border-radius: 0;
+						background: #e4f1ff;
 					}
 
 					&.selected {
 						background: var(--AIESEC-Blue);
 						border: 2px solid #006dd5;
 						color: var(--white);
+
+						&.first,
+						&.last{
+							z-index: 2;
+							margin-left: 5px;
+						}
+
+						&.first + p {
+							margin-left: -10px;
+							z-index: 1;
+							width: 60px;
+						}
+
+						&.last + p {
+							margin-left: -20px;
+							z-index: 1;
+							width: 70px;
+						}
+					}
+
+					&:nth-child(7n) {
+						border-top-right-radius: 16px;
+						border-bottom-right-radius: 16px;
+					}
+
+					&:nth-child(7n + 1) {
+						border-top-left-radius: 16px;
+						border-bottom-left-radius: 16px;
 					}
 				}
 			}

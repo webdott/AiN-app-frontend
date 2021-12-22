@@ -82,7 +82,7 @@ const ProfileMainContent: FC<ProfileMainContentProps> = ({
 						<p>12th October, 2021</p>
 					</div>
 
-					{/* <Calendar /> */}
+					<Calendar />
 				</main>
 
 				<Footer />
