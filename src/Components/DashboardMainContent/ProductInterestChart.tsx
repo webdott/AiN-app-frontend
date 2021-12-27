@@ -2,10 +2,10 @@ import { FC } from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
 
 const data = [
-	{ name: 'GV', value: 46, color: '#F85A40' },
-	{ name: 'None', value: 268, color: '#F3F4F7' },
-	{ name: 'GTe', value: 9, color: '#F48924' },
+    { name: 'None', value: 268, color: '#F3F4F7' },
 	{ name: 'GTa', value: 106, color: '#0CB9C1' },
+	{ name: 'GTe', value: 9, color: '#F48924' },
+	{ name: 'GV', value: 46, color: '#F85A40' },
 ];
 
 // const COLORS = ['#F85A40', '#F3F4F7', '#F48924', '#0CB9C1'];
