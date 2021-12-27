@@ -2,13 +2,11 @@ import { FC } from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
 
 const data = [
-    { name: 'None', value: 268, color: '#F3F4F7' },
+	{ name: 'None', value: 268, color: '#F3F4F7' },
 	{ name: 'GTa', value: 106, color: '#0CB9C1' },
 	{ name: 'GTe', value: 9, color: '#F48924' },
 	{ name: 'GV', value: 46, color: '#F85A40' },
 ];
-
-// const COLORS = ['#F85A40', '#F3F4F7', '#F48924', '#0CB9C1'];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
@@ -17,8 +15,14 @@ const renderCustomizedLabel = ({
 	midAngle,
 	innerRadius,
 	outerRadius,
-	index,
 	value,
+}: {
+	cx: number;
+	cy: number;
+	midAngle: number;
+	innerRadius: number;
+	outerRadius: number;
+	value: number;
 }) => {
 	const radius = innerRadius + (outerRadius - innerRadius) * 1.5;
 	const x = cx + radius * Math.cos(-midAngle * RADIAN);
