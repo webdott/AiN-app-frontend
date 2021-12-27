@@ -1,6 +1,11 @@
-import { Dispatch, FC, SetStateAction, useState } from 'react';
+import { Dispatch, FC, SetStateAction, useRef, useState } from 'react';
+import {
+	MdOutlineKeyboardArrowLeft,
+	MdOutlineKeyboardArrowRight,
+} from 'react-icons/md';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 
+import usePosition from '../../hooks/usePosition';
 import Header from '../Header';
 import Footer from '../Footer';
 import FeedbackText from '../FeedbackText';
@@ -20,6 +25,9 @@ const DashboardMainContent: FC<DashboardMainContentProps> = ({
 	setIsSidebarExpanded,
 }) => {
 	const [message, setMessage] = useState<string>('');
+	const chartsContainerRef = useRef<HTMLDivElement>(null);
+	const { hasItemsOnLeft, hasItemsOnRight, scrollLeft, scrollRight } =
+		usePosition(chartsContainerRef);
 
 	return (
 		<>
@@ -44,9 +52,25 @@ const DashboardMainContent: FC<DashboardMainContentProps> = ({
 						))}
 					</div>
 
-					<div className="charts">
-						<FunnelChart />
-						<ProductInterestChart />
+					<div className='charts'>
+						<button
+							className={`arrow arrow__left ${!hasItemsOnLeft ? 'dnone' : ''}`}
+							onClick={scrollLeft}
+							aria-label='Previous chart'
+						>
+							<MdOutlineKeyboardArrowLeft />
+						</button>
+						<div className='charts__container' ref={chartsContainerRef}>
+							<FunnelChart />
+							<ProductInterestChart />
+						</div>
+						<button
+							className={`arrow arrow__right ${!hasItemsOnRight ? 'dnone' : ''}`}
+							onClick={scrollRight}
+							aria-label='Next chart'
+						>
+							<MdOutlineKeyboardArrowRight />
+						</button>
 					</div>
 
 					<div className='view__expa__container'>

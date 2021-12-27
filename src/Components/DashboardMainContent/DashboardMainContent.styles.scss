@@ -61,16 +61,56 @@
 		}
 
 		.charts {
+			position: relative;
 			width: 100%;
-			display: flex;
-			align-items: center;
-			overflow-x: auto;
 			margin-bottom: 33px;
-			-ms-overflow-style: none;
-			scrollbar-width: none;
 
-			&::-webkit-scrollbar {
-				display: none;
+			.charts__container{
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				overflow-x: auto;
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+
+				&::-webkit-scrollbar {
+					display: none;
+				}
+			}
+
+			.arrow {
+				border: none;
+				position: absolute;
+				z-index: 10;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				top: 50%;
+				transform: translateY(-50%);
+				background: var(--white);
+				box-shadow: 0px 1.33333px 5.33333px rgba(0, 0, 0, 0.15);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				svg {
+					color: var(--AIESEC-Blue);
+					font-size: 1.2rem;
+				}
+
+				&.arrow__left {
+					left: 15px;
+				}
+
+				&.arrow__right {
+					right: 15px;
+
+				}
+
+				&.dnone {
+					display: none;
+				}
 			}
 
 			.chart {
