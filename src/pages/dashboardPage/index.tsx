@@ -3,6 +3,7 @@ import { FC, useState } from 'react';
 import Sidebar from '../../Components/Sidebar';
 import DashboardMainContent from '../../Components/DashboardMainContent';
 import activeClass from '../../models/activeClass';
+import './dashboardPage.styles.scss';
 
 const DashboardPage: FC = () => {
 	const [isSidebarExpanded, setIsSidebarExpanded] = useState<boolean>(false);
