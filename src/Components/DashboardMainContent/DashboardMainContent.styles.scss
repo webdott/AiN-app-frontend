@@ -178,6 +178,12 @@
 						}
 					}
 				}
+
+				&.funnel__chart{
+					.title{
+						margin-bottom: 29px;
+					}
+				}
 			}
 		}
 
@@ -208,6 +214,10 @@
 					svg {
 						transform: translateX(10px);
 					}
+				}
+
+				@media screen and (max-width:338px) {
+					font-size: .8rem;
 				}
 			}
 		}
