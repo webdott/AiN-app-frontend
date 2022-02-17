@@ -26,7 +26,7 @@ const SearchFilter: FC<SearchFilterProps> = ({ open, openFunc }) => {
 
 			<button
 				className={`filter__icon ${open ? 'blue' : ''}`}
-				onClick={() => openFunc(true)}
+				onClick={() => openFunc((open) => !open)}
 			>
 				<FilterIcon />
 			</button>

@@ -13,7 +13,7 @@ interface FilterTabProps {
 
 const FilterTab: FC<FilterTabProps> = ({ open, closeFunc, openCalendar }) => {
 	return (
-		<div id='filter__tab__container' className={open ? 'open' : 'close'}>
+		<div id='filter__tab__container' className={open ? 'open desktop' : 'close desktop'}>
 			<div className='filter__tab'>
 				<div className='title__close'>
 					<p className='title'>Filter by</p>

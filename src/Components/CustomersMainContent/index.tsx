@@ -49,9 +49,13 @@ const CustomersMainContent: FC<CustomersMainContentProps> = ({
 				<Footer />
 			</section>
 
-			<FilterTab open={isFilterTabOpen} closeFunc={setIsFilterTabOpen} openCalendar={setIsCalendarOpen}/>
+			<FilterTab
+				open={isFilterTabOpen}
+				closeFunc={setIsFilterTabOpen}
+				openCalendar={setIsCalendarOpen}
+			/>
 
-			{isCalendarOpen && <Calendar closeCalendar={setIsCalendarOpen}/>}
+			{isCalendarOpen && <Calendar closeCalendar={setIsCalendarOpen} />}
 		</>
 	);
 };
