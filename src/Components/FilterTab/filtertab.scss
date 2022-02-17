@@ -1,0 +1,313 @@
+#filter__tab__container {
+	position: fixed;
+	z-index: 99;
+	width: 100%;
+	max-width: 1400px;
+	height: 100%;
+	top: 0;
+	background: transparent;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+
+	.filter__tab {
+		width: 100%;
+		max-width: 352px;
+		height: calc(100vh - 70px);
+		padding: 32px;
+		background: var(--white);
+		box-shadow: 0px 0px 10px rgba(202, 202, 202, 0.15);
+        transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+
+		.title__close {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.title {
+				font-style: normal;
+				font-weight: normal;
+				font-size: 1rem;
+				line-height: 19px;
+				color: var(--AIESEC-Blue);
+			}
+
+			.close__icon {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 43px;
+				height: 38px;
+				background: transparent;
+				border: none;
+
+				svg {
+					font-size: 1rem;
+					color: var(--AIESEC-Black);
+				}
+			}
+		}
+
+		.filter__body {
+			width: 100%;
+			height: 100%;
+			overflow-y: auto;
+
+			.filter__metric {
+				width: 100%;
+				margin-top: 30px;
+
+				&__title {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					margin-bottom: 15px;
+                    cursor: pointer;
+
+					.close__metric {
+						width: 16px;
+						height: 16px;
+						background: var(--AIESEC-Black);
+						border: 1px solid var(--AIESEC-Black);
+						border-radius: 2px;
+						margin-right: 12px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: var(--white);
+						font-size: 0.875rem;
+
+						&.close {
+							svg {
+								&:first-child {
+									display: none;
+								}
+							}
+						}
+
+						&.open {
+							svg {
+								&:nth-child(2) {
+									display: none;
+								}
+							}
+						}
+					}
+
+					.metric__title {
+						font-style: normal;
+						font-weight: 500;
+						font-size: 0.75rem;
+						line-height: 14px;
+						color: var(--AIESEC-Black);
+					}
+				}
+
+				&__options {
+					width: 100%;
+					margin-left: 30px;
+					overflow: hidden;
+					max-height: 0;
+					transition: max-height 0.5s ease-in-out;
+
+					&.expanded {
+						max-height: 100vh;
+					}
+
+					.metric__option {
+						width: 100%;
+						display: flex;
+						align-items: center;
+						margin-bottom: 10.5px;
+
+						label {
+							font-style: normal;
+							font-weight: 300;
+							font-size: 1rem;
+							line-height: 19px;
+							color: var(--AIESEC-Black);
+						}
+
+						/* Checkbox */
+						.custom-checkbox {
+							cursor: pointer;
+							margin-right: 12px;
+
+							.checkboxx {
+								cursor: pointer;
+								-webkit-user-select: none;
+								user-select: none;
+								margin-bottom: 0;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+							}
+
+							.checkboxx span {
+								display: inline-block;
+								vertical-align: middle;
+								transform: translate3d(0, 0, 0);
+							}
+
+							.checkboxx label {
+								width: auto;
+								margin-bottom: 0;
+								cursor: pointer;
+							}
+
+							.checkboxx span:first-child {
+								position: relative;
+								width: 16px;
+								height: 16px;
+								border-radius: 2px;
+								transform: scale(1);
+								vertical-align: middle;
+								border: 1px solid var(--AIESEC-Blue);
+								background: #ffffff;
+								transition: all 0.2s ease;
+							}
+
+							.checkboxx span:first-child svg {
+								position: absolute;
+								top: 2.2px;
+								left: 0.75px;
+								fill: none;
+								stroke: #fff;
+								stroke-width: 3px;
+								stroke-linecap: round;
+								stroke-linejoin: round;
+								stroke-dasharray: 24px;
+								stroke-dashoffset: 24px;
+								transition: all 0.3s ease;
+								transition-delay: 0.1s;
+								transform: translate3d(0, 0, 0) scale(0.8);
+							}
+
+							.checkboxx span:first-child:before {
+								content: '';
+								width: 100%;
+								height: 100%;
+								background: var(--AIESEC-Blue);
+								display: block;
+								transform: scale(0);
+								opacity: 1;
+								border-radius: 50%;
+							}
+
+							.checkboxx span:last-child {
+								color: var(--light-grey);
+								font-size: 0.8em;
+								margin-bottom: 0;
+							}
+
+							.inp-checkboxx:checked + .checkboxx span:first-child {
+								background: var(--AIESEC-Blue);
+								border-color: var(--AIESEC-Blue);
+								animation: wave 0.4s ease;
+							}
+
+							.inp-checkboxx:checked + .checkboxx span:first-child svg {
+								stroke-dashoffset: 0;
+							}
+
+							.inp-checkboxx:checked + .checkboxx span:first-child:before {
+								transform: scale(1.2);
+								opacity: 0;
+								transition: all 0.6s ease;
+							}
+
+							@keyframes wave {
+								50% {
+									transform: scale(0.9);
+								}
+							}
+						}
+					}
+
+					.select__control {
+						max-width: 254px;
+						border: 1px solid var(--outline);
+						border-radius: 5px;
+
+						.select__placeholder {
+							font-style: normal;
+							font-weight: 300;
+							font-size: 1rem;
+							line-height: 19px;
+							color: var(--outline);
+						}
+
+						.select__multi-value {
+							background: #f3f9ff;
+							border-radius: 45px;
+							font-style: normal;
+							font-weight: normal;
+							font-size: 0.75rem;
+							line-height: 14px;
+							color: var(--AIESEC-Black);
+						}
+					}
+
+					#react-select-3-listbox.select__menu {
+						width: 100%;
+						max-width: 254px;
+
+						.select__menu-list.select__menu-list--is-multi {
+							width: 100%;
+							max-width: 254px;
+
+							.select__option {
+								width: 100%;
+								max-width: 254px;
+								font-style: normal;
+								font-weight: normal;
+								font-size: 0.75rem;
+								line-height: 14px;
+								color: var(--AIESEC-Black);
+							}
+						}
+					}
+
+					.date__result {
+						cursor: pointer;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						padding: 10px 15px;
+						width: 256px;
+						height: 36px;
+						background: #f3f9ff;
+						border-radius: 45px;
+						font-style: normal;
+						font-weight: 300;
+						font-size: 0.75rem;
+						line-height: 14px;
+						color: var(--AIESEC-Black);
+						margin-bottom: 40px;
+					}
+				}
+			}
+		}
+	}
+
+	&.open {
+		left: 50%;
+		transform: translateX(-50%);
+
+		.filter__tab {
+            opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	&.close {
+		left: 100%;
+        transition-delay: 1s;
+
+        .filter__tab {
+            opacity: 0;
+			transform: translateX(100%);
+		}
+	}
+}

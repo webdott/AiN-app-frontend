@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
@@ -6,7 +6,11 @@ import { dayNames, getDayMonthYear } from '../../helpers/utils';
 import useCalender from '../../hooks/useCalendar';
 import './calendar.styles.scss';
 
-const Calendar = () => {
+interface CalendarProps {
+	closeCalendar: Dispatch<SetStateAction<boolean>>;
+}
+
+const Calendar: FC<CalendarProps> = ({ closeCalendar }) => {
 	const {
 		startDate,
 		endDate,
@@ -71,7 +75,19 @@ const Calendar = () => {
 	// }, [lastDate, lastDayIndex]);
 
 	return (
-		<div id='calendar__modal'>
+		<div
+			id='calendar__modal'
+			onClick={(e) => {
+				const target = e.target as HTMLDivElement;
+				console.log(target.className);
+				if (
+					!(target instanceof SVGElement) &&
+					target.id.includes('calendar__modal')
+				) {
+					return closeCalendar(false);
+				}
+			}}
+		>
 			<div className='calendar'>
 				<div className='date__range'>
 					<div className='from'>
@@ -97,8 +113,8 @@ const Calendar = () => {
 							className='right'
 							onClick={() => {
 								console.log('clicked right');
-								date.setMonth(date.getMonth() + 1)}
-							}
+								date.setMonth(date.getMonth() + 1);
+							}}
 						>
 							<MdKeyboardArrowRight />
 						</button>

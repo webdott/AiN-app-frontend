@@ -4,8 +4,6 @@ import Footer from '../Footer';
 import Header from '../Header';
 import FeedbackText from '../FeedbackText';
 import AiesecMan from '../../assets/svg/AiesecMan';
-import useCalendar from '../../hooks/useCalendar';
-import Calendar from '../Calendar';
 import './ProfileMainContent.styles.scss';
 
 type ProfileMainContentProps = {
@@ -18,7 +16,6 @@ const ProfileMainContent: FC<ProfileMainContentProps> = ({
 	setIsSidebarExpanded,
 }) => {
 	const [message, setMessage] = useState<string>('');
-	const { startDate } = useCalendar();
 
 	return (
 		<>
@@ -81,8 +78,6 @@ const ProfileMainContent: FC<ProfileMainContentProps> = ({
 						<p>last active</p>
 						<p>12th October, 2021</p>
 					</div>
-
-					<Calendar />
 				</main>
 
 				<Footer />

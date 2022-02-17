@@ -1,9 +1,15 @@
+import { Dispatch, FC, SetStateAction } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 
 import FilterIcon from '../../assets/svg/FilterIcon';
 import './searchfilter.styles.scss';
 
-const SearchFilter = () => {
+interface SearchFilterProps {
+	open: boolean;
+	openFunc: Dispatch<SetStateAction<boolean>>;
+}
+
+const SearchFilter: FC<SearchFilterProps> = ({ open, openFunc }) => {
 	return (
 		<div className='search__filter'>
 			<div className='search'>
@@ -17,7 +23,11 @@ const SearchFilter = () => {
 					placeholder='Search by name, expa ID ...'
 				/>
 			</div>
-			<button className='filter__icon'>
+
+			<button
+				className={`filter__icon ${open ? 'blue' : ''}`}
+				onClick={() => openFunc(true)}
+			>
 				<FilterIcon />
 			</button>
 		</div>
