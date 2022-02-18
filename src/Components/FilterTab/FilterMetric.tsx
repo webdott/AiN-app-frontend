@@ -35,7 +35,7 @@ const FilterMetric: FC<FilterMetricProps> = ({
 			</div>
 			{type === 'checkbox' && (
 				<div
-					className={`filter__metric__options ${expanded ? 'expanded' : ''}`}
+					className={`filter__metric__options ${expanded ? 'expanded' : 'closed'}`}
 				>
 					{options?.map((option) => (
 						<div className='metric__option' key={option.id}>
@@ -51,7 +51,7 @@ const FilterMetric: FC<FilterMetricProps> = ({
 			)}
 			{type === 'committee' && (
 				<div
-					className={`filter__metric__options ${expanded ? 'expanded' : ''}`}
+					className={`filter__metric__options ${expanded ? 'expanded' : 'closed'}`}
 				>
 					<Select
 						defaultValue={[lcOptions[0], lcOptions[7]]}
@@ -66,7 +66,7 @@ const FilterMetric: FC<FilterMetricProps> = ({
 			)}
 			{type === 'date' && (
 				<div
-					className={`filter__metric__options ${expanded ? 'expanded' : ''}`}
+					className={`filter__metric__options ${expanded ? 'expanded' : 'closed'}`}
 				>
 					<div
 						className='date__result'

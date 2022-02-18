@@ -17,7 +17,7 @@ const SearchFilter: FC<SearchFilterProps> = ({ open, openFunc }) => {
 					<AiOutlineSearch />
 				</span>
 				<input
-					type='search'
+					type='text'
 					name='search-customer'
 					id='search-customer'
 					placeholder='Search by name, expa ID ...'
