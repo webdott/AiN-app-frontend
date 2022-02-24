@@ -169,7 +169,7 @@ const CustomerProfileMainContent: FC<CustomerProfileMainContentProps> = ({
 								<p>12th October, 2021</p>
 							</div>
 							<div className='last__active'>
-								<p>last active</p>
+								<p>last contacted</p>
 								<p>3rd December, 2021</p>
 							</div>
 						</div>

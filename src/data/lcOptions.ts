@@ -1,4 +1,5 @@
 export const lcOptions: Array<{ value: string; label: string }> = [
+	{ value: 'abeokuta', label: 'Abeokuta' },
 	{ value: 'abuja', label: 'Abuja' },
 	{ value: 'akure', label: 'Akure' },
 	{ value: 'benin', label: 'Benin' },
